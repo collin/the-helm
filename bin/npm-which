@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby 
+
+if File.exists?("./node_modules/.bin/#{ARGV.first}")
+  puts "./node_modules/.bin/#{ARGV.first}"
+else
+  puts `which #{ARGV.first}`
+end
