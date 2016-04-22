@@ -54,3 +54,6 @@ endfunction
 
 " Indent Guides
 autocmd VimEnter * IndentGuidesEnable
+
+" Markdown
+autocmd VimEnter *.md set wrap linebreak nolist formatoptions-=t
