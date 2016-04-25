@@ -55,5 +55,19 @@ endfunction
 " Indent Guides
 autocmd VimEnter * IndentGuidesEnable
 
+" Cursor/Line Highlighting
+autocmd VimEnter * hi CursorLine cterm=NONE ctermbg=254
+autocmd VimEnter * hi CursorColumn cterm=NONE ctermbg=254
+
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline cursorcolumn
+  au WinLeave * setlocal nocursorline nocursorcolumn
+augroup END
+
+
 " Markdown
 autocmd VimEnter *.md set wrap linebreak nolist formatoptions-=t
+
+" Whitespace
+autocmd BufWritePre * StripWhitespace
