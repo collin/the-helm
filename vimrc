@@ -1,7 +1,7 @@
 execute pathogen#infect()
 
 " Core Vim
-set ts=2 sw=2 expandtab
+autocmd VimEnter * set ts=2 sw=2 expandtab
 syntax on
 filetype plugin indent on
 set backspace=indent,eol,start
