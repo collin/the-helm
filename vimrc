@@ -11,7 +11,7 @@ set hlsearch
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/bower_components/*
 
 " Syntastic Settings
-:map <c-l> :<C-u>call ToggleErrors()<CR>
+map <c-l> :<C-u>call ToggleErrors()<CR>
 function! ToggleErrors()
     if empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype") is# "quickfix"'))
          " No location/quickfix list shown, open syntastic error location panel
@@ -51,6 +51,19 @@ function! s:CloseIfOnlyNerdTreeLeft()
   endif
 endfunction
 
+" UltiSnips
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
+
+let g:UltiSnipsEditSplit="vertical"
+au FileType javascript :UltiSnipsAddFiletypes javascript-jasmine
+
+" YouCompleteMe (UltiSnips Compat)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " Indent Guides
 autocmd VimEnter * IndentGuidesEnable
