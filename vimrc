@@ -10,6 +10,9 @@ set nu
 set hlsearch
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/bower_components/*
 
+" Highlilght column 81
+let &colorcolumn=join(range(81,81),",")
+
 " Syntastic Settings
 map <c-l> :<C-u>call ToggleErrors()<CR>
 function! ToggleErrors()
