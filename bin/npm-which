@@ -1,7 +1,3 @@
 #!/usr/bin/env ruby 
-
-if File.exists?("./node_modules/.bin/#{ARGV.first}")
-  puts "./node_modules/.bin/#{ARGV.first}"
-else
-  puts `which #{ARGV.first}`
-end
+LOCAL_NPM = "./node_modules/.bin/#{ARGV.first}"
+puts File.exists?(LOCAL_NPM) ? LOCAL_NPM : `which #{ARGV.first}`
